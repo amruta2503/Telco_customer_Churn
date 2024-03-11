@@ -3,10 +3,9 @@ from datetime import datetime
 from source.constant import constant
 
 class PipelineConfig:
-    def __init__(self,timestamp = datetime.now()):
-        timestamp = timestamp.strftime("%m_%d_%Y_%H_%M_%S")
-
-        self.artifact_dir = os.path.join(constant.ARTIFACT_DIR,timestamp)
+    def __init__(self,global_timestamp):
+        self.global_timestamp = global_timestamp
+        self.artifact_dir = os.path.join(constant.ARTIFACT_DIR,global_timestamp)
         self.target_column = constant.TARGET_COLUMN
         self.train_pipeline_name = constant.TRAIN_PIPELINE_NAME
         self.mongodb_url_key = constant.MONGODB_URL_KEY
