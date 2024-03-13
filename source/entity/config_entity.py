@@ -16,6 +16,8 @@ class PipelineConfig:
         self.feature_store_file_path = os.path.join(self.di_dir,constant.DI_FEATURE_STORE_DIR,constant.FILENAME)
         self.train_filename = os.path.join(self.di_dir,constant.DI_INGESTED_DIR,constant.TRAIN_FILE_NAME)
         self.test_filename = os.path.join(self.di_dir, constant.DI_INGESTED_DIR, constant.TEST_FILE_NAME)
+        self.mandatory_col_list = constant.DI_MANDATORY_COLUMN_LIST
+        self.mandatory_col_data_type = constant.DI_MANDATORY_COLUMN_DATA_TYPE
 
 
 
