@@ -40,3 +40,5 @@ DT_BINARY_CLASS_COL = ['Partner', 'Dependents', 'PhoneService', 'PaperlessBillin
 DT_ENCODER_PATH = 'source/ml/multi_class_encoder.pkl'
 
 DT_DIR_NAME: str = "data_transformation"
+FINAL_MODEL_PATH = "source/ml/final_model"
+MODEL_PATH = "source/ml/artifact"

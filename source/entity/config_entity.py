@@ -32,9 +32,13 @@ class PipelineConfig:
         self.dt_multi_class_col = constant.DT_MULTI_CLASS_COL
         self.dt_multi_class_encoder = constant.DT_ENCODER_PATH
 
+
         self.dt_train_file_path = os.path.join(self.artifact_dir, constant.DT_DIR_NAME)
         self.dt_test_file_path = os.path.join(self.artifact_dir, constant.DT_DIR_NAME)
 
+        # model train and evaluate
+        self.model_path = os.path.join(constant.MODEL_PATH)
+        self.final_model_path = os.path.join(constant.FINAL_MODEL_PATH)
 
 
 
