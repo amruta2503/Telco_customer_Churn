@@ -42,3 +42,8 @@ DT_ENCODER_PATH = 'source/ml/multi_class_encoder.pkl'
 DT_DIR_NAME: str = "data_transformation"
 FINAL_MODEL_PATH = "source/ml/final_model"
 MODEL_PATH = "source/ml/artifact"
+
+PREDICT_PIPELINE_NAME = 'predict'
+PREDICT_DATA_FILE_NAME = 'predict_data.csv'
+
+PREDICT_DI_COLLECTION_NAME = "predict-telco-customer-churn"

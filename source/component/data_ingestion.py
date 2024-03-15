@@ -10,21 +10,32 @@ class DataIngestion:
     def __init__(self,utility_config):
         self.utility_config = utility_config
 
-    def export_data_into_feature_store(self):
+    def export_data_into_feature_store(self,key):
         try:
             logging.info("start:data ingestion")
 
+            # client = MongoClient(self.utility_config.mongodb_url_key)
+            # database = client[self.utility_config.database_name]
+            # collection = database[self.utility_config.train_collection_name]
+
+            if key == 'train':
+                train_collection_name = self.utility_config.train_train_collection_name
+                feature_store_file_path = self.utility_config.train_feature_store_file_path
+            else:
+                train_collection_name = self.utility_config.predict_collection_name
+                feature_store_file_path = self.utility_config.predict_di_feature_store_file_path
+
             client = MongoClient(self.utility_config.mongodb_url_key)
             database = client[self.utility_config.database_name]
-            collection = database[self.utility_config.collection_name]
+            collection = database[self.utility_config.train_collection_name]
 
             cursor = collection.find()
 
             data = pd.DataFrame(list(cursor))
 
-            dir_path = os.path.dirname(self.utility_config.feature_store_file_path)
+            dir_path = os.path.dirname(feature_store_file_path)
             os.makedirs(dir_path,exist_ok=True)
-            data.to_csv(self.utility_config.feature_store_file_path,index=False)
+            data.to_csv(feature_store_file_path, index=False)
 
             logging.info("complete:data ingestion")
 
@@ -96,8 +107,8 @@ class DataIngestion:
         except ChurnException as e:
             raise e
 
-    def initiate_data_ingestion(self):
-        data = self.export_data_into_feature_store()
+    def initiate_data_ingestion(self,key):
+        data = self.export_data_into_feature_store(key)
         data = self.clean_data(data)
         data = self.process_data(data)
         self.split_data_train_test(data)
