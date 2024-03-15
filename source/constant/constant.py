@@ -30,3 +30,5 @@ DI_MANDATORY_COLUMN_DATA_TYPE = {'gender': 'object', 'SeniorCitizen': 'object', 
                               'PaperlessBilling': 'object', 'PaymentMethod': 'object', 'MonthlyCharges': 'float64',
                               'TotalCharges': 'float64', 'Churn': 'object'}
 
+DV_IMPUTATION_VALUES_FILE_NAME  = "source/ml/imputation_values.csv"
+

@@ -1,6 +1,6 @@
 import os
 import logging
-
+from pandas import DataFrame
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from pymongo.mongo_client import MongoClient
@@ -32,11 +32,11 @@ class DataIngestion:
         except ChurnException as e:
             raise e
 
-    def split_data_train_test(self,data):
+    def split_data_train_test(self,data:DataFrame)->None:
         try:
             logging.info("start: train,test data split")
 
-            train_set ,test_set = train_test_split(data,train_size=self.utility_config.train_test_split_ratio,random_state=45)
+            train_set, test_set = train_test_split(data, test_size=self.utility_config.train_test_split_ratio, random_state=42)
 
             dir_path = os.path.dirname(self.utility_config.train_filename)
             os.makedirs(dir_path,exist_ok=True)
