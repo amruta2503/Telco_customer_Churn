@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import pickle
+from imblearn.over_sampling import SMOTE
 from sklearn.preprocessing import MinMaxScaler
 from source.exception import ChurnException
 from source.logger import logging
@@ -80,11 +81,25 @@ class DataTransformation:
 
                     data[col] = (data[col] - min) / (max - min)
                 else:
-                    print(f"No scaling detils available for feature: {col}")
+                    print(f"No scaling details available for feature: {col}")
 
             data['Churn'] = self.utility_config.target_column
 
         return data
+
+    def oversample_smote(self,data):
+        try:
+            x = data.drop(columns=['Churn'])
+            y = data['Churn']
+
+            smote = SMOTE()
+
+            x_resampled,y_resampled  = smote.fit_resample(x,y)
+
+            return pd.concat([pd.DataFrame(x_resampled,columns=x.columns),pd.DataFrame(y_resampled,columns=['Churn'])],axis=1)
+
+        except ChurnException as e:
+            raise e
 
     def export_data_file(self, data, file_name, path):
         try:
@@ -111,7 +126,9 @@ class DataTransformation:
         train_data = self.min_max_scaling(train_data,type='train')
 
         self.export_data_file(train_data, self.utility_config.train_file_name, self.utility_config.dt_train_file_path)
-        #self.export_data_file(test_data, self.utility_config.test_file_name, self.utility_config.dt_test_file_path)
+        self.export_data_file(test_data, self.utility_config.test_file_name, self.utility_config.dt_test_file_path)
+
+        train_data = self.oversample_smote(train_data)
 
 
 
