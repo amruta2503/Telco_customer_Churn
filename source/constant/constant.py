@@ -4,13 +4,15 @@ TARGET_COLUMN = "Churn"
 FILENAME = "train_data.csv"
 
 
-MONGODB_URL_KEY = "mongodb+srv://amrutasharnangat2503:mongo@cluster0.r6fy3lw.mongodb.net/?retryWrites=true&w=majority"
+#MONGODB_URL_KEY = "mongodb+srv://amrutasharnangat2503:mongo@cluster0.r6fy3lw.mongodb.net/?retryWrites=true&w=majority"
 DATABASE_NAME = 'dataset'
 TRAIN_DI_COLLECTION_NAME = 'telco-customer-churn'
 
+#MONGODB_URL_KEY = "mongodb+srv://sanjay:C7H1U0YpnqhWYYci@cluster0.cmp0dtp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGODB_URL_KEY = "mongodb+srv://amrutasharnangat2503:mongo@cluster0.r6fy3lw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 TRAIN_FILE_NAME = "train.csv"
 TEST_FILE_NAME = "test.csv"
-
+#MONGODB_URL_KEY = "mongodb+srv://clarityai:N0lTZ4zedDxGbn9N@cluster0.qketnjc.mongodb.net/?retryWrites=true&w=majority"
 DI_DIR_NAME = "data_ingestion"
 DI_INGESTED_DIR = "ingested"
 DI_TRAIN_TEST_SPLIT_RATIO = 0.2
@@ -47,3 +49,6 @@ PREDICT_PIPELINE_NAME = 'predict'
 PREDICT_DATA_FILE_NAME = 'predict_data.csv'
 
 PREDICT_DI_COLLECTION_NAME = "predict-telco-customer-churn"
+
+DI_COL_DROP_IN_CLEAN = ['_id','customerID']
+PREDICT_FILE = 'predict.csv'

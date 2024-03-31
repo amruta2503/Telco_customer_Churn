@@ -13,9 +13,14 @@ class PipelineConfig:
         self.train_test_split_ratio = constant.DI_TRAIN_TEST_SPLIT_RATIO
         self.train_collection_name = constant.TRAIN_DI_COLLECTION_NAME
         self.di_dir = os.path.join(self.artifact_dir,constant.DI_DIR_NAME)
-        self.train_feature_store_file_path = os.path.join(self.di_dir,constant.DI_FEATURE_STORE_DIR,constant.FILENAME)
-        self.train_filename = os.path.join(self.di_dir,constant.DI_INGESTED_DIR,constant.TRAIN_FILE_NAME)
-        self.test_filename = os.path.join(self.di_dir, constant.DI_INGESTED_DIR, constant.TEST_FILE_NAME)
+        #self.train_feature_store_file_path = os.path.join(self.di_dir,constant.DI_FEATURE_STORE_DIR,constant.FILENAME)
+        self.train_feature_store_dir_path = os.path.join(self.artifact_dir,self.train_pipeline_name,constant.DI_DIR_NAME,constant.DI_FEATURE_STORE_DIR)
+        self.train_feature_store_file_name = constant.FILENAME
+
+        self.train_di_train_file_path = os.path.join(self.artifact_dir, self.train_pipeline_name, constant.DI_DIR_NAME,constant.DI_INGESTED_DIR)
+        self.train_di_test_file_path = os.path.join(self.artifact_dir, self.train_pipeline_name, constant.DI_DIR_NAME,constant.DI_INGESTED_DIR)
+        #self.train_filename = os.path.join(self.di_dir,constant.DI_INGESTED_DIR,constant.TRAIN_FILE_NAME)
+        #self.test_filename = os.path.join(self.di_dir, constant.DI_INGESTED_DIR, constant.TEST_FILE_NAME)
         self.mandatory_col_list = constant.DI_MANDATORY_COLUMN_LIST
         self.mandatory_col_data_type = constant.DI_MANDATORY_COLUMN_DATA_TYPE
 
@@ -40,8 +45,14 @@ class PipelineConfig:
         self.final_model_path = os.path.join(constant.FINAL_MODEL_PATH)
 
         self.predict_di_dir = os.path.join(self.artifact_dir, constant.PREDICT_PIPELINE_NAME, constant.DI_DIR_NAME)
-        self.predict_di_feature_store_file_path = os.path.join(self.predict_di_dir, constant.PREDICT_DATA_FILE_NAME)
+        #self.predict_di_feature_store_file_path = os.path.join(self.predict_di_dir, constant.PREDICT_DATA_FILE_NAME)
+        self.predict_di_feature_store_file_path = os.path.join(self.predict_di_dir,constant.DI_FEATURE_STORE_DIR)
+        self.predict_di_feature_store_file_name = constant.PREDICT_DATA_FILE_NAME
         self.predict_collection_name = constant.PREDICT_DI_COLLECTION_NAME
+
+        self.di_col_drop_in_clean = constant.DI_COL_DROP_IN_CLEAN
+        self.predict_file = constant.PREDICT_FILE
+        self.predict_file_path = os.path.join(self.predict_di_dir, constant.DI_INGESTED_DIR)
 
 
 

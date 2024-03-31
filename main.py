@@ -12,10 +12,10 @@ if __name__ == '__main__':
 
         logging.info("setup global timestamp")
 
-        #pipeline_obj = PipelineConfig(global_timestamp)
-        #print(pipeline_obj.__dict__)
+        # pipeline_obj = PipelineConfig(global_timestamp)
+        # print(pipeline_obj.__dict__)
 
         pipeline_obj = DataPipeline(global_timestamp)
-        #pipeline_obj.run_train_pipeline()
+        pipeline_obj.run_train_pipeline()
 
         pipeline_obj.run_predict_pipeline()
