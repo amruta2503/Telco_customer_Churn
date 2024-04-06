@@ -44,10 +44,17 @@ class PipelineConfig:
         self.model_path = os.path.join(constant.MODEL_PATH)
         self.final_model_path = os.path.join(constant.FINAL_MODEL_PATH)
 
+        #self.predict_di_dir = os.path.join(self.artifact_dir, constant.PREDICT_PIPELINE_NAME, constant.DI_DIR_NAME)
+
         self.predict_di_dir = os.path.join(self.artifact_dir, constant.PREDICT_PIPELINE_NAME, constant.DI_DIR_NAME)
+
         #self.predict_di_feature_store_file_path = os.path.join(self.predict_di_dir, constant.PREDICT_DATA_FILE_NAME)
-        self.predict_di_feature_store_file_path = os.path.join(self.predict_di_dir,constant.DI_FEATURE_STORE_DIR)
+        # self.predict_di_feature_store_file_path = os.path.join(self.predict_di_dir,constant.DI_FEATURE_STORE_DIR)
+        # self.predict_di_feature_store_file_name = constant.PREDICT_DATA_FILE_NAME
+
+        self.predict_di_feature_store_file_path = os.path.join(self.predict_di_dir, constant.DI_FEATURE_STORE_DIR)
         self.predict_di_feature_store_file_name = constant.PREDICT_DATA_FILE_NAME
+
         self.predict_collection_name = constant.PREDICT_DI_COLLECTION_NAME
 
         self.di_col_drop_in_clean = constant.DI_COL_DROP_IN_CLEAN

@@ -19,6 +19,7 @@ def export_data_csv(data, filename, file_path):
 
         print(os.path.join(file_path, filename))
         data.to_csv(os.path.join(file_path, filename), index=False)
+        print(data)
 
     except ChurnException as e:
         raise e

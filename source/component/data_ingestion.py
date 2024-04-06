@@ -62,6 +62,7 @@ class DataIngestion:
 
             collection = database[collection_name]
             cursor = collection.find()
+            print(cursor)
             data = pd.DataFrame(list(cursor))
 
             # dir_path = os.path.dirname(feature_store_file_path)
@@ -156,7 +157,7 @@ class DataIngestion:
 
                 mandatory_cols.remove('Churn')
 
-                data = data.drop(self.utility_config.di_col_drop_in_clean, axis=1)
+                #data = data.drop(self.utility_config.di_col_drop_in_clean, axis=1)
 
             for col in mandatory_cols:
 

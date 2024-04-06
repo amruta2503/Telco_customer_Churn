@@ -5,7 +5,7 @@ FILENAME = "train_data.csv"
 
 
 #MONGODB_URL_KEY = "mongodb+srv://amrutasharnangat2503:mongo@cluster0.r6fy3lw.mongodb.net/?retryWrites=true&w=majority"
-DATABASE_NAME = 'dataset'
+DATABASE_NAME = 'db-customer-churn'
 TRAIN_DI_COLLECTION_NAME = 'telco-customer-churn'
 
 #MONGODB_URL_KEY = "mongodb+srv://sanjay:C7H1U0YpnqhWYYci@cluster0.cmp0dtp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
