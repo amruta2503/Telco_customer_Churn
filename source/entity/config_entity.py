@@ -25,10 +25,16 @@ class PipelineConfig:
         self.mandatory_col_data_type = constant.DI_MANDATORY_COLUMN_DATA_TYPE
 
         self.imputation_values_file = constant.DV_IMPUTATION_VALUES_FILE_NAME
-
         self.outlier_params_file = constant.DV_OUTLIER_PARAMS_FILE
+        self.train_dv_imputation_values_file_path = constant.DV_IMPUTATION_FILE_PATH
+        self.train_dv_imputation_values_file_name = constant.DV_IMPUTATION_FILE_NAME
         self.train_file_name = constant.TRAIN_FILE_NAME
         self.test_file_name = constant.TEST_FILE_NAME
+
+        self.train_dv_imputation_values_file_name = constant.DV_IMPUTATION_VALUES_FILE_NAME
+
+        self.train_dv_train_file_path = os.path.join(self.artifact_dir, self.train_pipeline_name, constant.DV_DIR_NAME)
+        self.train_dv_test_file_path = os.path.join(self.artifact_dir, self.train_pipeline_name, constant.DV_DIR_NAME)
 
         self.dv_train_file_path = os.path.join(self.artifact_dir,constant.DV_DIR_NAME)
         self.dv_test_file_path = os.path.join(self.artifact_dir, constant.DV_DIR_NAME)
@@ -39,6 +45,9 @@ class PipelineConfig:
 
         self.dt_train_file_path = os.path.join(self.artifact_dir, constant.DT_DIR_NAME)
         self.dt_test_file_path = os.path.join(self.artifact_dir, constant.DT_DIR_NAME)
+
+        self.train_dt_train_file_path = os.path.join(self.artifact_dir, self.train_pipeline_name, constant.DT_DIR_NAME)
+        self.train_dt_test_file_path = os.path.join(self.artifact_dir, self.train_pipeline_name, constant.DT_DIR_NAME)
 
         # model train and evaluate
         self.model_path = os.path.join(constant.MODEL_PATH)
@@ -55,11 +64,18 @@ class PipelineConfig:
         self.predict_di_feature_store_file_path = os.path.join(self.predict_di_dir, constant.DI_FEATURE_STORE_DIR)
         self.predict_di_feature_store_file_name = constant.PREDICT_DATA_FILE_NAME
 
+        self.predict_dv_file_path = os.path.join(self.artifact_dir, constant.PREDICT_PIPELINE_NAME,
+                                                 constant.DV_DIR_NAME)
+        self.predict_dt_file_path = os.path.join(self.artifact_dir, constant.PREDICT_PIPELINE_NAME,
+                                                 constant.DT_DIR_NAME)
         self.predict_collection_name = constant.PREDICT_DI_COLLECTION_NAME
 
         self.di_col_drop_in_clean = constant.DI_COL_DROP_IN_CLEAN
         self.predict_file = constant.PREDICT_FILE
         self.predict_file_path = os.path.join(self.predict_di_dir, constant.DI_INGESTED_DIR)
+
+        self.predict_mp_file_path = os.path.join(self.artifact_dir, constant.PREDICT_PIPELINE_NAME, constant.MP_DIR_NAME)
+        self.final_model_file_name = constant.FINAL_MODEL_FILE_NAME
 
 
 

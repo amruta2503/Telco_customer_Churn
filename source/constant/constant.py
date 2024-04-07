@@ -33,6 +33,8 @@ DI_MANDATORY_COLUMN_DATA_TYPE = {'gender': 'object', 'SeniorCitizen': 'object', 
                               'TotalCharges': 'float64', 'Churn': 'object'}
 
 DV_IMPUTATION_VALUES_FILE_NAME  = "source/ml/imputation_values.csv"
+DV_IMPUTATION_FILE_PATH = "source/ml"
+DV_IMPUTATION_FILE_NAME = "imputation_values.csv"
 
 DV_OUTLIER_PARAMS_FILE = "source/ml/outlier_details.csv"
 DV_DIR_NAME = "data_validation"
@@ -52,3 +54,6 @@ PREDICT_DI_COLLECTION_NAME = "predict-telco-customer-churn"
 
 DI_COL_DROP_IN_CLEAN = ['_id','customerID']
 PREDICT_FILE = 'predict.csv'
+
+MP_DIR_NAME = "model_prediction"
+FINAL_MODEL_FILE_NAME = "GradientBoostingClassifier.pkl"
