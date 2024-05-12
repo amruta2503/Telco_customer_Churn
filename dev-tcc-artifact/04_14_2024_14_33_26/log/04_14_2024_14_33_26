@@ -1,0 +1,4 @@
+[2024-04-14 14:33:26,448] 13 root - INFO - setup global timestamp
+[2024-04-14 14:33:26,451] 188 root - INFO - start: data ingestion
+[2024-04-14 14:33:26,454] 50 root - INFO - start: data load from mongoDB
+[2024-04-14 14:33:38,744] 1278 botocore.credentials - INFO - Found credentials in shared credentials file: ~/.aws/credentials

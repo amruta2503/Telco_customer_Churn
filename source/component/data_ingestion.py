@@ -2,6 +2,7 @@ import os
 import logging
 from pandas import DataFrame
 import pandas as pd
+from source.utility.utility import upload_artifact_to_s3
 from source.utility.utility import export_data_csv
 from sklearn.model_selection import train_test_split
 from pymongo.mongo_client import MongoClient
@@ -69,7 +70,9 @@ class DataIngestion:
             # os.makedirs(dir_path, exist_ok=True)
             # data.to_csv(feature_store_file_path, index=False)
 
-            export_data_csv(data, feature_store_file_name, feature_store_file_path)
+            #export_data_csv(data, feature_store_file_name, feature_store_file_path)
+
+            upload_artifact_to_s3(data,feature_store_file_name,feature_store_file_path,self.utility_config.aws_bucket_name)
 
             logging.info("complete: data load from mongoDB")
 
@@ -197,6 +200,7 @@ class DataIngestion:
 
             if key == 'predict':
                 export_data_csv(data, self.utility_config.predict_file, self.utility_config.predict_file_path)
+                #upload_artifact_to_s3(data,feature_store_file_name,feature_store_file_path,self.utility_config.aws_bucket_name)
 
             logging.info("complete: data ingestion")
         except ChurnException as e:

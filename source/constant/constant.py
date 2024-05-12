@@ -1,15 +1,18 @@
-ARTIFACT_DIR = "artifact"
+import os
+
+ARTIFACT_DIR = "dev-tcc-artifact"
 TRAIN_PIPELINE_NAME = "train"
 TARGET_COLUMN = "Churn"
 FILENAME = "train_data.csv"
 
+MONGODB_KEY = "MONGODB_URL"
 
-#MONGODB_URL_KEY = "mongodb+srv://amrutasharnangat2503:mongo@cluster0.r6fy3lw.mongodb.net/?retryWrites=true&w=majority"
+MONGODB_URL_KEY = "mongodb+srv://amrutasharnangat2503:eQI1fsJVp1Jtx6M0@cluster0.r6fy3lw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 DATABASE_NAME = 'db-customer-churn'
 TRAIN_DI_COLLECTION_NAME = 'telco-customer-churn'
 
 #MONGODB_URL_KEY = "mongodb+srv://sanjay:C7H1U0YpnqhWYYci@cluster0.cmp0dtp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-MONGODB_URL_KEY = "mongodb+srv://amrutasharnangat2503:mongo@cluster0.r6fy3lw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+#MONGODB_URL_KEY = "mongodb+srv://amrutasharnangat2503:mongo@cluster0.r6fy3lw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 TRAIN_FILE_NAME = "train.csv"
 TEST_FILE_NAME = "test.csv"
 #MONGODB_URL_KEY = "mongodb+srv://clarityai:N0lTZ4zedDxGbn9N@cluster0.qketnjc.mongodb.net/?retryWrites=true&w=majority"
@@ -57,3 +60,10 @@ PREDICT_FILE = 'predict.csv'
 
 MP_DIR_NAME = "model_prediction"
 FINAL_MODEL_FILE_NAME = "GradientBoostingClassifier.pkl"
+
+AWS_ACCESS_KEY = os.environ['AWS_ACCESS_KEY']
+AWS_SECRET_KEY = os.environ['AWS_SECRET_KEY']
+AWS_REGION = os.environ['AWS_REGION']
+
+AWS_BUCKET_NAME = 'test-churn-demo1'
+AWS_BUCKET_PREFIX = "dev-tcc-artifact"

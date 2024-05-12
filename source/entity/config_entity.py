@@ -1,6 +1,7 @@
 import os
 from datetime import datetime
 from source.constant import constant
+from source.constant.constant import MONGODB_KEY
 
 class PipelineConfig:
     def __init__(self,global_timestamp):
@@ -9,6 +10,9 @@ class PipelineConfig:
         self.target_column = constant.TARGET_COLUMN
         self.train_pipeline_name = constant.TRAIN_PIPELINE_NAME
         self.mongodb_url_key = constant.MONGODB_URL_KEY
+        #self.mongodb_url_key = os.environ.get(MONGODB_KEY)
+        #self.mongodb_url_key = os.environ[constant.MONGODB_KEY]
+
         self.database_name = constant.DATABASE_NAME
         self.train_test_split_ratio = constant.DI_TRAIN_TEST_SPLIT_RATIO
         self.train_collection_name = constant.TRAIN_DI_COLLECTION_NAME
@@ -76,6 +80,15 @@ class PipelineConfig:
 
         self.predict_mp_file_path = os.path.join(self.artifact_dir, constant.PREDICT_PIPELINE_NAME, constant.MP_DIR_NAME)
         self.final_model_file_name = constant.FINAL_MODEL_FILE_NAME
+
+        self.aws_access_key = constant.AWS_ACCESS_KEY
+        self.aws_secret_key = constant.AWS_SECRET_KEY
+        self.aws_region = constant.AWS_REGION
+        self.aws_bucket_name = constant.AWS_BUCKET_NAME
+        self.aws_bucket_prefix = constant.AWS_BUCKET_PREFIX
+
+
+
 
 
 

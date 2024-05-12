@@ -5,6 +5,7 @@ from source.logger import logging
 from source.utility.utility import export_data_csv
 from source.utility.utility import import_csv_file
 from source.exception import ChurnException
+from source.utility.utility import upload_artifact_to_s3,read_csv_from_s3
 
 class DataValidation:
     def __init__(self, utility_config):
