@@ -12,6 +12,11 @@ class PipelineConfig:
         self.mongodb_url_key = constant.MONGODB_URL_KEY
         #self.mongodb_url_key = os.environ.get(MONGODB_KEY)
         #self.mongodb_url_key = os.environ[constant.MONGODB_KEY]
+        self.aws_access_key = constant.AWS_ACCESS_KEY
+        self.aws_secret_key = constant.AWS_SECRET_KEY
+        self.aws_region = constant.AWS_REGION
+        self.aws_bucket_name = constant.AWS_BUCKET_NAME
+        self.aws_bucket_prefix = constant.AWS_BUCKET_PREFIX
 
         self.database_name = constant.DATABASE_NAME
         self.train_test_split_ratio = constant.DI_TRAIN_TEST_SPLIT_RATIO
@@ -86,6 +91,7 @@ class PipelineConfig:
         self.aws_region = constant.AWS_REGION
         self.aws_bucket_name = constant.AWS_BUCKET_NAME
         self.aws_bucket_prefix = constant.AWS_BUCKET_PREFIX
+
 
 
 

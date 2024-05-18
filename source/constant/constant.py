@@ -1,5 +1,9 @@
 import os
 
+
+APP_HOST = '0.0.0.0'
+APP_PORT = 8000
+
 ARTIFACT_DIR = "dev-tcc-artifact"
 TRAIN_PIPELINE_NAME = "train"
 TARGET_COLUMN = "Churn"
